@@ -9,8 +9,10 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 import { fetchUsers } from './features/users/usersSlice';
+import { fetchPosts } from './features/posts/postsSlice';
 
-store.dispatch(fetchUsers())
+store.dispatch(fetchUsers());
+store.dispatch(fetchPosts());
 
 const container = document.getElementById('root');
 const root = createRoot(container);

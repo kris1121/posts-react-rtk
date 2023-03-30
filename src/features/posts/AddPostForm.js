@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 import { addNewPost } from "./postsSlice";
 import { selectAllUsers } from "../users/usersSlice";
@@ -8,6 +9,7 @@ import { selectAllUsers } from "../users/usersSlice";
 const AddPostForm = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -31,6 +33,7 @@ const AddPostForm = () => {
                 setTitle('');
                 setContent('');
                 setUserId('');
+                navigate('/');
                 
             } catch (error) {
                 console.log('Failed to save the post', error)
