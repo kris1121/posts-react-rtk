@@ -23,7 +23,7 @@ const EditPostForm = () => {
 
     const onTitleChanged = e => setTitle(e.target.value);
     const onContentChanged = e => setContent(e.target.value);
-    const onAuthorChanged = e => setUserId(e.target.value);
+    const onAuthorChanged = e => setUserId(Number(e.target.value));
 
     if (!post) {
         return (
